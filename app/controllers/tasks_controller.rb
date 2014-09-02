@@ -20,6 +20,8 @@ class TasksController < ApplicationController
   end
 
   def update
+    puts "*" * 80
+    puts params
     @task = Task.find(params[:id])
     if @task.update_attributes(task_params)
       redirect_to root_path, notice: "Task was updated successfully!"
